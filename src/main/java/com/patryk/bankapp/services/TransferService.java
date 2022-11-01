@@ -25,18 +25,18 @@ public class TransferService {
         Account receiver = accountRepository.findById(idReceiver)
                 .orElseThrow(() -> new RuntimeException());
 
-        BigDecimal senderNewAmount = sender.getBalance().subtract(amount);
-        BigDecimal receiverNewAmount = receiver.getBalance().add(amount);
+        BigDecimal senderNewBalance = sender.getBalance().subtract(amount);
+        BigDecimal receiverNewBalance = receiver.getBalance().add(amount);
 
-        accountRepository.changeAmount(idSender, senderNewAmount);
-        accountRepository.changeAmount(idReceiver, receiverNewAmount);
+        accountRepository.changeBalance(idSender, senderNewBalance);
+        accountRepository.changeBalance(idReceiver, receiverNewBalance);
     }
 
     public Iterable<Account> getAllAccounts() {
         return accountRepository.findAll();
     }
 
-    public List<Account> findAccountsByName(String name) {
-        return accountRepository.findAccountsByName(name);
+    public List<Account> findAccountsByCustomerName(String name) {
+        return accountRepository.findAccountsByCustomerName(name);
     }
 }
