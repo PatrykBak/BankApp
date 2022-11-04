@@ -6,24 +6,24 @@ import java.math.BigDecimal;
 public class Account {
 
     @Id
-    private long accountId;
-    private String customerName;
+    private long id;
+    private String customer;
     private BigDecimal balance;
 
-    public long getAccountId() {
-        return accountId;
+    public long getId() {
+        return id;
     }
 
-    public void setAccountId(long accountId) {
-        this.accountId = accountId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getCustomerName() {
-        return customerName;
+        return customer;
     }
 
     public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+        this.customer = customerName;
     }
 
     public BigDecimal getBalance() {

@@ -1,5 +1,6 @@
 package com.patryk.bankapp.services;
 
+import com.patryk.bankapp.exceptions.AccountNotFoundException;
 import com.patryk.bankapp.model.Account;
 import com.patryk.bankapp.repositories.AccountRepository;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,10 @@ public class TransferService {
     @Transactional
     public void transferMoney(long idSender, long idReceiver, BigDecimal amount) {
         Account sender = accountRepository.findById(idSender)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(() -> new AccountNotFoundException());
 
         Account receiver = accountRepository.findById(idReceiver)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(() -> new AccountNotFoundException());
 
         BigDecimal senderNewBalance = sender.getBalance().subtract(amount);
         BigDecimal receiverNewBalance = receiver.getBalance().add(amount);
