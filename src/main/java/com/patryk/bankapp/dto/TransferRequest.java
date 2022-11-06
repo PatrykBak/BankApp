@@ -11,9 +11,11 @@ public class TransferRequest {
     public long getSenderAccountId() {
         return senderAccountId;
     }
+
     public long getReceiverAccountId() {
         return receiverAccountId;
     }
+
     public BigDecimal getAmount() {
         return amount;
     }

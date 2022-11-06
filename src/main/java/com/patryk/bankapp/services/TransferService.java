@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Service
 public class TransferService {
@@ -31,13 +30,5 @@ public class TransferService {
 
         accountRepository.changeBalance(idSender, senderNewBalance);
         accountRepository.changeBalance(idReceiver, receiverNewBalance);
-    }
-
-    public Iterable<Account> getAllAccounts() {
-        return accountRepository.findAll();
-    }
-
-    public List<Account> findAccountsByCustomerName(String name) {
-        return accountRepository.findAccountsByCustomerName(name);
     }
 }

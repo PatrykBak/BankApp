@@ -10,11 +10,11 @@ import java.util.List;
 
 public interface AccountRepository extends CrudRepository<Account, Long> {
 
-    @Query("SELECT * FROM account WHERE customer = :customer")
-    List<Account> findAccountsByCustomerName(String customer);
+    @Query("SELECT * FROM account WHERE customer_name = :customer_name")
+    List<Account> findAccountsByCustomerName(String customer_name);
 
     @Modifying
-    @Query("UPDATE account SET balance = :balance WHERE id = :id")
-    void changeBalance(long id, BigDecimal balance);
+    @Query("UPDATE account SET balance = :balance WHERE account_id = :account_id")
+    void changeBalance(long account_id, BigDecimal balance);
 
 }

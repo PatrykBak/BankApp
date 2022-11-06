@@ -1,29 +1,30 @@
 package com.patryk.bankapp.model;
 
 import org.springframework.data.annotation.Id;
+
 import java.math.BigDecimal;
 
 public class Account {
 
     @Id
-    private long id;
-    private String customer;
+    private long account_id;
+    private String customer_name;
     private BigDecimal balance;
 
     public long getId() {
-        return id;
+        return account_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long account_id) {
+        this.account_id = account_id;
     }
 
     public String getCustomerName() {
-        return customer;
+        return customer_name;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customer = customerName;
+    public void setCustomerName(String customer_name) {
+        this.customer_name = customer_name;
     }
 
     public BigDecimal getBalance() {
