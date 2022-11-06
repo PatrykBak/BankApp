@@ -55,12 +55,16 @@ public class AccountController {
 
     @GetMapping("/accounts")
     public Iterable<Account> getAllAccounts(
-            @RequestParam(required = false) String name
+            @RequestParam(required = false) String name, String accountId
     ) {
-        if (name == null) {
-            return accountService.getAllAccounts();
-        } else {
+        if (name != null) {
             return accountService.findAccountsByCustomerName(name);
+        }
+        else if (accountId != null) {
+            return accountService.findAccountsByAccountId(accountId);
+        }
+        else {
+            return accountService.getAllAccounts();
         }
     }
 

@@ -22,4 +22,8 @@ public class AccountService {
     public List<Account> findAccountsByCustomerName(String name) {
         return accountRepository.findAccountsByCustomerName(name);
     }
+
+    public List<Account> findAccountsByAccountId(String accountId) {
+        return accountRepository.findAccountsByAccountId(accountId);
+    }
 }

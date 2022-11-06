@@ -2,8 +2,10 @@ schema.sql - database
 data.sql - creates accounts
 
 Postman calls
-List all accounts
+List accounts
 http://localhost:8080/accounts - list all accounts
+http://localhost:8080/accounts?accountId=2
+http://localhost:8080/accounts?name=Customer One
 
 Transfer from one account (senderAccountId) to another (receiverAccountId)
 http://localhost:8080/transfer - transfer amount from one account to another
