@@ -59,11 +59,9 @@ public class AccountController {
     ) {
         if (name != null) {
             return accountService.findAccountsByCustomerName(name);
-        }
-        else if (accountId != null) {
+        } else if (accountId != null) {
             return accountService.findAccountsByAccountId(accountId);
-        }
-        else {
+        } else {
             return accountService.getAllAccounts();
         }
     }
